@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="page-header-title">
-                            @yield('page-title')
+                            @yield('pageTitle')
                             {{--<h4 class="pull-left page-title">Dashboard</h4>
                             <ol class="breadcrumb pull-right">
                                 <li><a href="#">Xadmino</a></li>
@@ -348,7 +348,7 @@
         </div> <!-- content -->
 
         <footer class="footer">
-            2016 © TechNews.com
+            2020 © TechNews.com
         </footer>
 
     </div>

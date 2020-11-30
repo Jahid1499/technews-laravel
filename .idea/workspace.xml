@@ -11,6 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46405381-4c58-4773-a181-bb710443ec94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/User/UserController.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/assets/admin/css/_core.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap.min.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/assets/admin/css/icons.css" afterDir="false" />
@@ -1459,6 +1461,7 @@
       <change afterPath="$PROJECT_DIR$/public/assets/admin/plugins/summernote/summernote.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/assets/admin/plugins/timepicker/bootstrap-timepicker.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/assets/admin/plugins/timepicker/bootstrap-timepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/admin/master.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/admin/partial/_footer.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/resources/views/admin/partial/_header.blade.php" afterDir="false" />
@@ -1563,7 +1566,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -1712,6 +1715,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606753216859</updated>
       <workItem from="1606753217927" duration="4124000" />
+      <workItem from="1606757392063" duration="1085000" />
     </task>
     <servers />
   </component>
@@ -1728,11 +1732,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1606756591610">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1606757674816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606756591610" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606757674816" />
   </component>
 </project>
