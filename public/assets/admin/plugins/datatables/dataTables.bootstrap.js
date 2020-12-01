@@ -156,7 +156,7 @@ if ( DataTable.TableTools ) {
 	} );
 
 	// Have the collection use a bootstrap compatible drop down
-	$.extend( true, DataTable.TableTools.DEFAULTS.oTags, {
+	$.extend( true, DataTable.TableTools.DEFAULTS.oroles, {
 		"collection": {
 			"container": "ul",
 			"button": "li",

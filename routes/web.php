@@ -25,6 +25,7 @@ Route::get('/', function () {
 Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (){
     Route::get('home',[AdminController::class, 'index'])->name('dashboard');
     Route::resource('tags', '\App\Http\Controllers\Admin\TagController');
+    Route::resource('roles', '\App\Http\Controllers\Admin\RoleController');
 
 
 });

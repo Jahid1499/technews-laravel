@@ -1,7 +1,7 @@
 @extends('admin.master')
-@section('title', "Tags Edit | Tech news")
+@section('title', "tags Edit | Tech news")
 @section('pageTitle')
-    <h4 class="pull-left page-title">Tags Create</h4>
+    <h4 class="pull-left page-title">tags Create</h4>
     <ol class="breadcrumb pull-right">
         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
         <li><a href="{{route('admin.tags.index')}}">Tag</a></li>
@@ -11,7 +11,7 @@
 
 @section('mainContent')
     <div class="panel-heading">
-        <h3 class="panel-title text-uppercase">Tags Create</h3>
+        <h3 class="panel-title text-uppercase">tags Create</h3>
     </div>
     <div class="panel-body">
         <form role="form" action="{{route('admin.tags.update', $data->id)}}" method="post">

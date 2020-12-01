@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tag;
+
+use App\Models\Role;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class TagController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        $datas = Tag::all();
-        return view('admin.tags.index', compact('datas'));
+        $datas = Role::all();
+        return view('admin.roles.index', compact('datas'));
     }
 
     /**
@@ -28,7 +29,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('admin.tags.create');
+        return view('admin.roles.create');
     }
 
     /**
@@ -40,11 +41,11 @@ class TagController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:tags|max:255',
+            'name' => 'required',
             'status' => 'required',
         ]);
 
-        $data = new Tag;
+        $data = new Role();
         $data->name = $request->name;
         $data->slug = Str::slug($request->name);
         $data->status = $request->status;
@@ -53,16 +54,16 @@ class TagController extends Controller
 
         Toastr::success('Tag successfully create', 'Success');
 
-        return redirect()->route('admin.tags.index');
+        return redirect()->route('admin.roles.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show(Role $role)
     {
         //
     }
@@ -70,53 +71,52 @@ class TagController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit(Role $role)
     {
-
-        $data = $tag;
-        return view('admin.tags.edit', compact('data'));
+        $data = $role;
+        return view('admin.roles.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(Request $request, Role $role)
     {
         $request->validate([
             'name' => 'required',
             'status' => 'required',
         ]);
 
-        $tag->name = $request->name;
-        $tag->slug = Str::slug($request->name);
-        $tag->status = $request->status;
+        $role->name = $request->name;
+        $role->slug = Str::slug($request->name);
+        $role->status = $request->status;
 
-        $tag->update();
+        $role->update();
 
         Toastr::success('Tag successfully Updated', 'Success');
 
-        return redirect()->route('admin.tags.index');
+        return redirect()->route('admin.roles.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy(Role $role)
     {
-        $tag->delete();
+        $role->delete();
 
         Toastr::success('Tag successfully Deleted', 'Success');
 
-        return redirect()->route('admin.tags.index');
+        return redirect()->route('admin.roles.index');
     }
 }

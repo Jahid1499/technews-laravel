@@ -155,7 +155,7 @@
 
         createEditor: function(options) {
             options = options || {};
-            
+
             // Add the toolbar to a clone of the options object so multiple instances
             // of the WYISYWG don't break because "toolbar" is already defined
             options = $.extend(true, {}, options);
@@ -388,7 +388,7 @@
             return methods.init.apply( this, arguments );
         } else {
             $.error( 'Method ' +  method + ' does not exist on jQuery.wysihtml5' );
-        }    
+        }
     };
 
     $.fn.wysihtml5.Constructor = Wysihtml5;
@@ -422,7 +422,7 @@
                 "wysiwyg-color-aqua" : 1,
                 "wysiwyg-color-orange" : 1
             },
-            tags: {
+            roles: {
                 "b":  {},
                 "i":  {},
                 "br": {},

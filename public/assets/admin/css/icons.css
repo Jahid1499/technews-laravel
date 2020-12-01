@@ -311,7 +311,7 @@ File: Icons
 .fa-tag:before {
   content: "\f02b";
 }
-.fa-tags:before {
+.fa-roles:before {
   content: "\f02c";
 }
 .fa-book:before {
@@ -3454,7 +3454,7 @@ File: Icons
 .mdi-code-string:before {
   content: "\F173";
 }
-.mdi-code-tags:before {
+.mdi-code-roles:before {
   content: "\F174";
 }
 .mdi-codepen:before {
@@ -7623,8 +7623,8 @@ MIT License: https://github.com/driftyco/ionicons
 .ion-ios7-plus-outline,
 .ion-ios7-pricetag,
 .ion-ios7-pricetag-outline,
-.ion-ios7-pricetags,
-.ion-ios7-pricetags-outline,
+.ion-ios7-priceroles,
+.ion-ios7-priceroles-outline,
 .ion-ios7-printer,
 .ion-ios7-printer-outline,
 .ion-ios7-pulse,
@@ -7755,7 +7755,7 @@ MIT License: https://github.com/driftyco/ionicons
 .ion-pound,
 .ion-power,
 .ion-pricetag,
-.ion-pricetags,
+.ion-priceroles,
 .ion-printer,
 .ion-pull-request,
 .ion-qr-scanner,
@@ -9016,10 +9016,10 @@ MIT License: https://github.com/driftyco/ionicons
 .ion-ios7-pricetag-outline:before {
   content: "\f28c";
 }
-.ion-ios7-pricetags:before {
+.ion-ios7-priceroles:before {
   content: "\f333";
 }
-.ion-ios7-pricetags-outline:before {
+.ion-ios7-priceroles-outline:before {
   content: "\f332";
 }
 .ion-ios7-printer:before {
@@ -9412,7 +9412,7 @@ MIT License: https://github.com/driftyco/ionicons
 .ion-pricetag:before {
   content: "\f2aa";
 }
-.ion-pricetags:before {
+.ion-priceroles:before {
   content: "\f2ab";
 }
 .ion-printer:before {

@@ -30,6 +30,14 @@
                     <a href="typography.html" class="waves-effect"><i class="ti-ruler-pencil"></i><span> Typography <span class="badge badge-primary pull-right">6</span></span></a>
                 </li>
 
+                <li class="has_sub {{Request::is('admin.roles.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Roles </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.roles.index')}}">Role List</a></li>
+                        <li><a href="{{route('admin.roles.create')}}">Role Create</a></li>
+                    </ul>
+                </li>
+
                 <li class="has_sub {{Request::is('admin.tag.*') ? 'active': ''}}">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Tags </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
