@@ -30,6 +30,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
     Route::resource('follower', '\App\Http\Controllers\Admin\FollowerController');
     Route::resource('social', '\App\Http\Controllers\Admin\SocialController');
     Route::resource('about', '\App\Http\Controllers\Admin\AboutController');
+    Route::resource('images', '\App\Http\Controllers\Admin\ImageController');
 
 
 });
