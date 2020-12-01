@@ -51,7 +51,7 @@
             @enderror
 
             <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
-            <a href="#" class="btn btn-info waves-effect waves-light">Back</a>
+            <a href="{{route('admin.roles.index')}}" class="btn btn-info waves-effect waves-light">Back</a>
         </form>
     </div>
 @endsection
