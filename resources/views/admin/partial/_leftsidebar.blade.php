@@ -42,7 +42,7 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Tags </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('admin.tags.index')}}">Tag List</a></li>
-                        <li><a href="{{route('admin.tags.create')}}">Add Tag</a></li>
+                        <li><a href="{{route('admin.tags.create')}}">Tag Create</a></li>
                     </ul>
                 </li>
 
@@ -50,7 +50,13 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Category </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('admin.categories.index')}}">Category List</a></li>
-                        <li><a href="{{route('admin.categories.create')}}">Add Category</a></li>
+                        <li><a href="{{route('admin.categories.create')}}">Category Create</a></li>
+                    </ul>
+                </li>
+                <li class="has_sub {{Request::is('admin.follower.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Follower </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.follower.index')}}">Follower List</a></li>
                     </ul>
                 </li>
 

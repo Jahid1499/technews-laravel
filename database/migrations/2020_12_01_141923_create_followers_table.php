@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTageTable extends Migration
+class CreateFollowersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateTageTable extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('followers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique('tags');
-            $table->string('slug');
-            $table->enum('status', [0,1]);
+            $table->integer('facebook');
+            $table->integer('youtube');
+            $table->integer('twitter');
+            $table->integer('pinterest');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateTageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('followers');
     }
 }
