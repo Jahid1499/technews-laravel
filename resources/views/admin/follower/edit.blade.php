@@ -21,7 +21,7 @@
                 <label for="facebook">Facebook Follower</label>
                 <input type="text" name="facebook" value="{{$data->facebook ? $data->facebook : old('facebook') }}" class="form-control @error('facebook') is-invalid @enderror" id="ex1" placeholder="Enter facebook follower Number">
             </div>
-            @error('name')
+            @error('facebook')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
@@ -29,7 +29,7 @@
                 <label for="youtube">Youtube Follower</label>
                 <input type="text" name="youtube" value="{{$data->youtube ? $data->youtube : old('youtube') }}" class="form-control @error('youtube') is-invalid @enderror" id="ex1" placeholder="Enter youtube follower Number">
             </div>
-            @error('name')
+            @error('youtube')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
@@ -37,7 +37,7 @@
                 <label for="twitter">Twitter Follower</label>
                 <input type="text" name="twitter" value="{{$data->twitter ? $data->twitter : old('twitter') }}" class="form-control @error('twitter') is-invalid @enderror" id="ex1" placeholder="Enter twitter follower Number">
             </div>
-            @error('name')
+            @error('twitter')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
@@ -45,7 +45,7 @@
                 <label for="pinterest">Pinterest Follower</label>
                 <input type="text" name="pinterest" value="{{$data->pinterest ? $data->pinterest : old('pinterest') }}" class="form-control @error('pinterest') is-invalid @enderror" id="ex1" placeholder="Enter pinterest follower Number">
             </div>
-            @error('name')
+            @error('pinterest')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 

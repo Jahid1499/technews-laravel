@@ -28,6 +28,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
     Route::resource('roles', '\App\Http\Controllers\Admin\RoleController');
     Route::resource('categories', '\App\Http\Controllers\Admin\CategoryController');
     Route::resource('follower', '\App\Http\Controllers\Admin\FollowerController');
+    Route::resource('social', '\App\Http\Controllers\Admin\SocialController');
 
 
 });
