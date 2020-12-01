@@ -11,9 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46405381-4c58-4773-a181-bb710443ec94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/roles/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/register.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/update.blade.php" beforeDir="false" />
@@ -105,35 +105,6 @@
       <change beforePath="$PROJECT_DIR$/../sms/view_student_registration_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../sms/view_sylebus_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TagController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TagController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_01_032803_create_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_01_032803_create_tags_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/css/icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/css/icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/fonts/ionicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/fonts/ionicons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/fonts/materialdesignicons-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/fonts/materialdesignicons-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/font-awesome/less/icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/font-awesome/less/icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/font-awesome/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/font-awesome/less/variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/css/ionicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/css/ionicons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/css/ionicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/css/ionicons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/fonts/ionicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/fonts/ionicons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/less/_ionicons-icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/less/_ionicons-icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/less/_ionicons-variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/less/_ionicons-variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/scss/_ionicons-icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/scss/_ionicons-icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/scss/_ionicons-variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/ionicons/scss/_ionicons-variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/material-design/css/materialdesignicons.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/material-design/css/materialdesignicons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/material-design/css/materialdesignicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/material-design/css/materialdesignicons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/material-design/fonts/materialdesignicons-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/material-design/fonts/materialdesignicons-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/icons/material-design/materialdesignicons.less" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/icons/material-design/materialdesignicons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/plugins/datatables/dataTables.bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/plugins/datatables/dataTables.bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/plugins/jquery-sparkline/jquery.sparkline.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/plugins/jquery-sparkline/jquery.sparkline.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/plugins/summernote/summernote.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/plugins/summernote/summernote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/plugins/summernote/summernote.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/plugins/summernote/summernote.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Tags/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Tags/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Tags/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Tags/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/Tags/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/Tags/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -300,7 +271,7 @@
       <updated>1606753216859</updated>
       <workItem from="1606753217927" duration="4124000" />
       <workItem from="1606757392063" duration="1927000" />
-      <workItem from="1606792951624" duration="21423000" />
+      <workItem from="1606792951624" duration="22916000" />
     </task>
     <servers />
   </component>
@@ -320,10 +291,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606819649816">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606823955995">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606819649816" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606823955995" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1606796615425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
