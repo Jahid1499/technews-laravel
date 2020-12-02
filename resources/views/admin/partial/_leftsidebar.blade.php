@@ -90,6 +90,14 @@
                     </ul>
                 </li>
 
+                <li class="has_sub {{Request::is('admin.sliders.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span>Slider</span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.sliders.index')}}">Slider List</a></li>
+                        <li><a href="{{route('admin.sliders.create')}}">Slider Add</a></li>
+                    </ul>
+                </li>
+
                 <!--<li class="has_sub">-->
                 <!--<a href="javascript:void(0);" class="waves-effect"><i class="ti-share"></i><span>Multi Menu </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>-->
                 <!--<ul>-->
