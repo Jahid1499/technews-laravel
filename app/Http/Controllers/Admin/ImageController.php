@@ -59,15 +59,6 @@ class ImageController extends Controller
         $smimage->move($path, $smimagename);
         $bgimage->move($path, $bgimagename);
 
-
-        //$request->small_image->move(public_path($path), $imageName);
-        //$request->image->move(public_path($path), $imageName2);
-
-        /*return $imageName." + ".$imageName2;
-        $smFileName = time().'.'.$request->file->extension();*/
-
-       // $request->file->move(public_path('uploads'), $fileName);
-
         $data = new Image();
         $data->small_image = $path.$smimagename;
         $data->image = $path.$bgimagename;
@@ -113,36 +104,53 @@ class ImageController extends Controller
     public function update(Request $request, Image $image)
     {
         $request->validate([
-            'small_image' => 'required|mimes:jpeg,png,jpg,JPG',
-            'image' => 'required|mimes:jpeg,png,jpg,JPG',
+            'small_image' => 'mimes:jpeg,png,jpg,JPG',
+            'image' => 'mimes:jpeg,png,jpg,JPG',
             'status'=>'required'
         ]);
 
-        $smimage = $request->file('small_image');
-        $bgimage = $request->file('image');
-
-        $smimagename = time().'_sm.'.$smimage->getClientOriginalExtension();
-        $bgimagename = time().'_bg.'.$bgimage->getClientOriginalExtension();
-
-
-        $path = 'assets/admin/photoGallery/';
-
-        if (file_exists(public_path($image->small_image)))
+        if ($request->hasFile('small_image'))
         {
-            unlink(public_path($image->small_image));
+            $path = 'assets/admin/photoGallery/';
+            $smimage = $request->file('small_image');
+            $smimagename = time().'_sm.'.$smimage->getClientOriginalExtension();
+
+            if (file_exists(public_path($image->small_image)))
+            {
+                unlink(public_path($image->small_image));
+            }
+
+            $smimage->move($path, $smimagename);
+
+            $imgsm = $path.$smimagename;
+        }else{
+            $imgsm = $image->small_image;
         }
 
-        if (file_exists(public_path($image->image)))
+
+
+        if ($request->hasFile('image'))
         {
-            unlink(public_path($image->image));
+            $path = 'assets/admin/photoGallery/';
+            $bgimage = $request->file('image');
+            $bgimage = time().'_sm.'.$bgimage->getClientOriginalExtension();
+
+            if (file_exists(public_path($image->image)))
+            {
+                unlink(public_path($image->image));
+            }
+
+            $bgimage->move($path, $bgimage);
+
+            $imgbg = $path.$smimagename;
+        }else{
+            $imgbg = $image->image;
         }
 
-        $smimage->move($path, $smimagename);
-        $bgimage->move($path, $bgimagename);
 
 
-        $image->small_image = $path.$smimagename;
-        $image->image = $path.$bgimagename;
+        $image->small_image = $imgsm;
+        $image->image = $imgbg;
         $image->status = $request->status;
 
         $image->save();

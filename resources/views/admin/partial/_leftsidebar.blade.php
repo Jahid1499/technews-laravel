@@ -82,6 +82,14 @@
                     </ul>
                 </li>
 
+                <li class="has_sub {{Request::is('admin.videos.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span>Video gallery</span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.videos.index')}}">Gallery List</a></li>
+                        <li><a href="{{route('admin.videos.create')}}">Create Video</a></li>
+                    </ul>
+                </li>
+
                 <!--<li class="has_sub">-->
                 <!--<a href="javascript:void(0);" class="waves-effect"><i class="ti-share"></i><span>Multi Menu </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>-->
                 <!--<ul>-->

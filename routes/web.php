@@ -31,6 +31,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
     Route::resource('social', '\App\Http\Controllers\Admin\SocialController');
     Route::resource('about', '\App\Http\Controllers\Admin\AboutController');
     Route::resource('images', '\App\Http\Controllers\Admin\ImageController');
+    Route::resource('videos', '\App\Http\Controllers\Admin\VideoController');
 
 
 });
