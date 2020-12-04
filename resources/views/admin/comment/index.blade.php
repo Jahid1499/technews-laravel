@@ -17,9 +17,9 @@
             <thead>
             <tr>
                 <th>#SL</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Message</th>
+                <th>User Id</th>
+                <th>Post Id</th>
+                <th>Comment</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -27,26 +27,32 @@
             @foreach($datas as $key=>$data)
             <tr>
                 <td>{{$key+1}}</td>
-                <td>{{$data->name}}</td>
-                <td>{{$data->email}}</td>
-                <td>{{$data->message}}</td>
+                <td>{{$data->user_id}}</td>
+                <td>{{$data->post_id}}</td>
+                <td>{{$data->comment}}</td>
                 <td>
-                    @if($data->status)
-                        <a href="#" class="btn btn-success">Done</a>
-                    @else
-                        <button class="btn btn-warning" type="button" onclick="contactUpdate({{$data->id}})">
-                            <i class="fa fa-edit"></i>
+                    @if($data->status == "0")
+                        <button class="btn btn-info" type="button" onclick="statusUpdate({{$data->id}})">
+                            Show
                         </button>
-                        <form id="update_from_{{$data->id}}" style="display: none" action="{{route('admin.contacts.update', $data->id)}}" method="post">
+                        <form id="update_from_{{$data->id}}" style="display: none" action="{{route('admin.comments.update', $data->id)}}" method="post">
                             @csrf
                             @method('put')
                         </form>
-                    @endif
+                    @else
+                        <button class="btn btn-success" type="button" onclick="statusUpdate({{$data->id}})">
+                            Hide
+                        </button>
+                        <form id="update_from_{{$data->id}}" style="display: none" action="{{route('admin.comments.update', $data->id)}}" method="post">
+                            @csrf
+                            @method('put')
+                        </form>
 
-                        <button class="btn btn-danger" type="button" onclick="deleteContact({{$data->id}})">
+                    @endif
+                        <button class="btn btn-danger" type="button" onclick="deleteComment({{$data->id}})">
                             <i class="fa fa-trash-o"></i>
                         </button>
-                        <form id="delete_from_{{$data->id}}" style="display: none" action="{{route('admin.contacts.destroy', $data->id)}}" method="post">
+                        <form id="delete_from_{{$data->id}}" style="display: none" action="{{route('admin.comments.destroy', $data->id)}}" method="post">
                             @csrf
                             @method('delete')
                         </form>
@@ -61,7 +67,7 @@
 
 @push('js')
     <script type="text/javascript">
-        function contactUpdate(id)
+        function statusUpdate(id)
         {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
@@ -73,10 +79,10 @@
 
             swalWithBootstrapButtons.fire({
                 title: 'Are you sure?',
-                text: "You won't be Update!",
+                text: "You won't be Update Comment status!",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Yes, Update it!',
+                confirmButtonText: 'Yes, Do it!',
                 cancelButtonText: 'No, cancel!',
                 reverseButtons: true
             }).then((result) => {
@@ -100,8 +106,7 @@
                 }
             })
         };
-
-        function deleteContact(id)
+        function deleteComment(id)
         {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
@@ -113,7 +118,7 @@
 
             swalWithBootstrapButtons.fire({
                 title: 'Are you sure?',
-                text: "You won't be Delete Contact!",
+                text: "You won't be Delete this Comment!",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes, Delete it!',

@@ -113,6 +113,13 @@
                     </ul>
                 </li>
 
+                <li class="has_sub {{Request::is('admin.comments.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span>Comment</span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.comments.index')}}">Comment List</a></li>
+                    </ul>
+                </li>
+
                 <!--<li class="has_sub">-->
                 <!--<a href="javascript:void(0);" class="waves-effect"><i class="ti-share"></i><span>Multi Menu </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>-->
                 <!--<ul>-->

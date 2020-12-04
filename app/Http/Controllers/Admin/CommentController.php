@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
+use App\Models\Comment;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $datas = Contact::orderBy('status')->get();
+        $datas = Comment::orderBy('status')->get();
         //return $datas;
-        return view('admin.contact.index', compact('datas'));
+        return view('admin.comment.index', compact('datas'));
     }
 
     /**
@@ -45,10 +45,10 @@ class ContactController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
+    public function show(Comment $comment)
     {
         //
     }
@@ -56,10 +56,10 @@ class ContactController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contact $contact)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -68,31 +68,38 @@ class ContactController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contact $contact)
+    public function update(Request $request, Comment $comment)
     {
-        //return $contact;
-        $contact->status="1";
-        $contact->save();
 
-        Toastr::success('Contact Status successfully Updated', 'Success');
+        if ($comment->status == 0)
+        {
+            $comment->status="1";
+        }else
+        {
+            $comment->status="0";
+        }
+        //return $comment->status;
 
-        return redirect()->route('admin.contacts.index');
+        $comment->save();
+
+        Toastr::success('Comment Status successfully updated', 'Success');
+
+        return redirect()->route('admin.comments.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Contact  $contact
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(Comment $comment)
     {
-        $contact->delete();
-
-        Toastr::success('Contact Successfully Deleted', 'Delete');
-        return redirect()->route('admin.contacts.index');
+        $comment->delete();
+        Toastr::success('Comment Successfully Deleted', 'Delete');
+        return redirect()->route('admin.comments.index');
     }
 }

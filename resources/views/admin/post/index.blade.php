@@ -47,7 +47,7 @@
                 <td>
                     <a href="{{route('admin.posts.edit', $data->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
                     <a href="{{route('admin.posts.show', $data->id)}}" class="btn btn-primary"><i class="fa fa-eye"></i></a>
-                    <button class="btn btn-danger" type="button" onclick="deleteSlider({{$data->id}})">
+                    <button class="btn btn-danger" type="button" onclick="deletePost({{$data->id}})">
                         <i class="fa fa-trash-o"></i>
                     </button>
                     <form id="delete_from_{{$data->id}}" style="display: none" action="{{route('admin.posts.destroy', $data->id)}}" method="post">
@@ -66,7 +66,7 @@
 
 @push('js')
     <script type="text/javascript">
-        function deleteSlider(id)
+        function deletePost(id)
         {
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {

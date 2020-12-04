@@ -35,6 +35,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
     Route::resource('sliders', '\App\Http\Controllers\Admin\SliderController');
     Route::resource('posts', '\App\Http\Controllers\Admin\PostController');
     Route::resource('contacts', '\App\Http\Controllers\Admin\ContactController');
+    Route::resource('comments', '\App\Http\Controllers\Admin\CommentController');
 
 
 });
