@@ -38,6 +38,14 @@
                     </ul>
                 </li>
 
+                <li class="has_sub {{Request::is('admin.users.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> User </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.users.index')}}">User List</a></li>
+                        <li><a href="{{route('admin.users.create')}}">User Create</a></li>
+                    </ul>
+                </li>
+
                 <li class="has_sub {{Request::is('admin.tag.*') ? 'active': ''}}">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Tags </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
