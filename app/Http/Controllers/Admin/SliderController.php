@@ -45,7 +45,6 @@ class SliderController extends Controller
             'title'=>'required',
             'description'=>'required',
             'image' => 'required|mimes:jpeg,png,jpg,JPG',
-            'link'=>'required|url',
             'status'=>'required'
         ]);
 

@@ -33,6 +33,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
     Route::resource('images', '\App\Http\Controllers\Admin\ImageController');
     Route::resource('videos', '\App\Http\Controllers\Admin\VideoController');
     Route::resource('sliders', '\App\Http\Controllers\Admin\SliderController');
+    Route::resource('posts', '\App\Http\Controllers\Admin\PostController');
 
 
 });

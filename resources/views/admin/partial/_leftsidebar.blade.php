@@ -78,7 +78,7 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span>Image gallery</span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('admin.images.index')}}">Gallery List</a></li>
-                        <li><a href="{{route('admin.images.create')}}">Create Image</a></li>
+                        <li><a href="{{route('admin.images.create')}}">Image Create</a></li>
                     </ul>
                 </li>
 
@@ -86,7 +86,7 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span>Video gallery</span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('admin.videos.index')}}">Gallery List</a></li>
-                        <li><a href="{{route('admin.videos.create')}}">Create Video</a></li>
+                        <li><a href="{{route('admin.videos.create')}}">Video Create</a></li>
                     </ul>
                 </li>
 
@@ -94,7 +94,15 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span>Slider</span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="{{route('admin.sliders.index')}}">Slider List</a></li>
-                        <li><a href="{{route('admin.sliders.create')}}">Slider Add</a></li>
+                        <li><a href="{{route('admin.sliders.create')}}">Slider Create</a></li>
+                    </ul>
+                </li>
+
+                <li class="has_sub {{Request::is('admin.posts.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span>Post</span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.posts.index')}}">Post List</a></li>
+                        <li><a href="{{route('admin.posts.create')}}">Post Create</a></li>
                     </ul>
                 </li>
 

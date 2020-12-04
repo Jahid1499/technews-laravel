@@ -26,7 +26,7 @@
 
 {!! Toastr::message() !!}
 
-{<script type="text/javascript">
+<script type="text/javascript">
     @if($errors->any())
         @foreach($errors->all() as $error)
         toastr.error('{{$error}}','Error', {closeButton:true, progressBar:true})
