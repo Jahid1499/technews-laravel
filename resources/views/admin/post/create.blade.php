@@ -28,13 +28,12 @@
 
 
             @php
-                if (old('category')){
-                    $tag = old('category');
+                if (old('category_id')){
+                    $c = old('category_id');
                 }else {
-                    $tag = '';
+                    $c = '';
                 }
             @endphp
-
 
             <div class="form-group">
                 <label>Category Select</label>
@@ -42,7 +41,7 @@
                     <select class="form-control" for="category" name="category_id">
                         <option value="">-- Select One --</option>
                         @foreach($categories as $category)
-                            <option value="{{$category->id}}" {{$tag == 2 ? 'selected': ''}}>{{$category->name}}</option>
+                            <option value="{{$category->id}}" {{$category->id == $c ? 'selected':''}}>{{$category->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -65,10 +64,10 @@
 
 
             @php
-                if (old('tag')){
-                    $tag = old('tag_id');
+                if (old('tag_id')){
+                    $t = old('tag_id');
                 }else {
-                    $tag = '';
+                    $t = '';
                 }
             @endphp
             <div class="form-group">
@@ -76,7 +75,7 @@
                 <div>
                     @foreach($tags as $tag)
                         <div class="radio radio-success">
-                            <input type="radio" name="tag_id" id="radio1" value="{{$tag->id}}">
+                            <input type="radio" {{$tag->id == $t ? 'checked':''}} name="tag_id" id="radio1" value="{{$tag->id}}">
                             <label for="radio1"> {{$tag->name}} </label>
                         </div>
                     @endforeach

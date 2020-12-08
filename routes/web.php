@@ -3,8 +3,13 @@
 use App\Http\Controllers\Admin\AdminController;
 
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\UserController;
+use App\Models\About;
+use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,26 +22,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', [HomeController::class, 'home'])->name('home');
 
 //Admin route
 Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (){
     Route::get('home',[AdminController::class, 'index'])->name('dashboard');
-    Route::resource('tags', '\App\Http\Controllers\Admin\TagController');
-    Route::resource('roles', '\App\Http\Controllers\Admin\RoleController');
-    Route::resource('categories', '\App\Http\Controllers\Admin\CategoryController');
-    Route::resource('follower', '\App\Http\Controllers\Admin\FollowerController');
-    Route::resource('social', '\App\Http\Controllers\Admin\SocialController');
-    Route::resource('about', '\App\Http\Controllers\Admin\AboutController');
-    Route::resource('images', '\App\Http\Controllers\Admin\ImageController');
-    Route::resource('videos', '\App\Http\Controllers\Admin\VideoController');
-    Route::resource('sliders', '\App\Http\Controllers\Admin\SliderController');
-    Route::resource('posts', '\App\Http\Controllers\Admin\PostController');
-    Route::resource('contacts', '\App\Http\Controllers\Admin\ContactController');
-    Route::resource('comments', '\App\Http\Controllers\Admin\CommentController');
-    Route::resource('users', '\App\Http\Controllers\Admin\UserController');
+    Route::resource('tags', 'TagController');
+    Route::resource('roles', 'RoleController');
+    Route::resource('categories', 'CategoryController');
+    Route::resource('follower', 'FollowerController');
+    Route::resource('social', 'SocialController');
+    Route::resource('about', 'AboutController');
+    Route::resource('images', 'ImageController');
+    Route::resource('videos', 'VideoController');
+    Route::resource('sliders', 'SliderController');
+    Route::resource('posts', 'PostController');
+    Route::resource('contacts', 'ContactController');
+    Route::resource('comments', 'CommentController');
+    Route::resource('users', 'UserController');
 
 
 });
@@ -44,5 +51,14 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
 //User route
 Route::group(['as'=>'user.','prefix'=>'user', 'namespace'=>'User'],function (){
     Route::get('home',[UserController::class, 'index'])->name('dashboard');
-
 });
+
+
+View::composer('user.partial._footertop',function ($view){
+    return $view->with(['tags'=>Tag::where('status','1')->orderBy('name')->get(), 'about'=>About::first()]);
+});
+
+View::composer('user.partial._navigation',function ($view){
+    return $view->with('categories', Category::where('status','1')->orderBy('name')->get());
+});
+

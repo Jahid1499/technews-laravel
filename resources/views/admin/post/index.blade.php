@@ -1,16 +1,16 @@
 @extends('admin.master')
 @section('title', "Posts | Tech news")
 @section('pageTitle')
-    <h4 class="pull-left page-title">Sliders</h4>
+    <h4 class="pull-left page-title text-uppercase">Posts</h4>
     <ol class="breadcrumb pull-right">
         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-        <li class="active text-uppercase">Sliders</li>
+        <li class="active text-uppercase">Posts</li>
     </ol>
 @endsection
 
 @section('mainContent')
     <div class="panel-heading">
-        <h3 class="panel-title text-uppercase">Sliders Tables</h3>
+        <h3 class="panel-title text-uppercase">Posts Tables</h3>
     </div>
     <div class="panel-body">
         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">

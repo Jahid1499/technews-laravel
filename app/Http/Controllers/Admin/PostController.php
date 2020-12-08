@@ -43,8 +43,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
-
+        //return $request;
 
         $request->validate([
             'tag_id'=>'required',
@@ -74,10 +73,11 @@ class PostController extends Controller
         $data = new Post();
         $data->tag_id = $request->tag_id;
         $data->category_id = $request->category_id;
-        $data->user_id = 1;
+        $data->user_id = 4;
         $data->title = $request->title;
         $data->description = $request->description;
         $data->image = $path.$imagename;
+        $data->is_featured = $request->is_featured;
         $data->status = $request->status;
 
         $data->save();
@@ -130,7 +130,6 @@ class PostController extends Controller
             'title'=>'required',
             'description'=>'required',
             'image' => 'mimes:jpeg,png,jpg,JPG',
-            'is_featured'=>'required',
             'status'=>'required'
         ]);
 
