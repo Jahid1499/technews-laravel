@@ -1,16 +1,16 @@
 @extends('admin.master')
-@section('title', "Tags | Tech news")
+@section('title', "Users | Tech news")
 @section('pageTitle')
-    <h4 class="pull-left page-title">Images</h4>
+    <h4 class="pull-left page-title">Users</h4>
     <ol class="breadcrumb pull-right">
         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-        <li class="active text-uppercase">Images</li>
+        <li class="active text-uppercase">Users</li>
     </ol>
 @endsection
 
 @section('mainContent')
     <div class="panel-heading">
-        <h3 class="panel-title text-uppercase">Images Tables</h3>
+        <h3 class="panel-title text-uppercase">Users Tables</h3>
     </div>
     <div class="panel-body">
         <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
@@ -21,7 +21,8 @@
                 <th>Email</th>
                 <th>Status</th>
                 <th>Role</th>
-                <th>Status</th>
+                <th>Image</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -30,9 +31,9 @@
                 <td>{{$key+1}}</td>
                 <td>{{$data->name}}</td>
                 <td>{{$data->email}}</td>
-                <td>{{$data->role_id}}</td>
-                <td style="width: 30%"><img src="{{asset($data->image)}}" alt="" class="img-responsive" style="width: 50%; height: 4%;"></td>
                 <td>{{$data->status ? 'Active':'Inactive'}}</td>
+                <td>{{$data->role_id}}</td>
+                <td style="width: 30%"><img src="{{asset($data->image)}}" alt="" class="img-responsive" style="width: 50%; height: ২০%;"></td>
                 <td>
                     <a href="{{route('admin.users.edit', $data->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
                     <button class="btn btn-danger" type="button" onclick="deleteUser({{$data->id}})">

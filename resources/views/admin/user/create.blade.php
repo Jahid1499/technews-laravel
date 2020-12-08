@@ -1,36 +1,63 @@
 @extends('admin.master')
-@section('title', "tags Edit | Tech news")
+@section('title', "User Create | Tech news")
 @section('pageTitle')
-    <h4 class="pull-left page-title text-uppercase">Image Gallery Create</h4>
+    <h4 class="pull-left page-title text-uppercase">User Create</h4>
     <ol class="breadcrumb pull-right">
         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-        <li><a href="{{route('admin.images.index')}}">Image Gallery</a></li>
-        <li class="active">Image Gallery Create</li>
+        <li><a href="{{route('admin.users.index')}}">User</a></li>
+        <li class="active">User Create</li>
     </ol>
 @endsection
 
 @section('mainContent')
     <div class="panel-heading">
-        <h3 class="panel-title text-uppercase">Image Gallery Create</h3>
+        <h3 class="panel-title text-uppercase">User Create</h3>
     </div>
     <div class="panel-body">
-        <form role="form" action="{{route('admin.images.store')}}" method="post" enctype="multipart/form-data">
+        <form role="form" action="{{route('admin.users.store')}}" method="post">
             @csrf
+
             <div class="form-group">
-                <label for="small_image">Small Image</label>
-                <input type="file" name="small_image" value="{{ old('small_image') }}" class="form-control @error('small_image') is-invalid @enderror">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" placeholder="Enter user name">
             </div>
-            @error('small_image')
+            @error('name')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
             <div class="form-group">
-                <label for="image">Image</label>
-                <input type="file" name="image" value="{{ old('image') }}" class="form-control @error('image') is-invalid @enderror">
+                <label for="email">Email</label>
+                <input disabled type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Enter user email">
             </div>
-            @error('image')
+            @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+
+            @php
+                if (old('role')){
+                    $r = old('role');
+                }else {
+                    $r = '';
+                }
+            @endphp
+
+            <div class="form-group">
+                <label>Roele Select</label>
+                <div>
+                    <select class="form-control" for="category" name="role_id">
+                        <option value="">-- Select One --</option>
+                        @foreach($roles as $role)
+                            <option value="{{$role->id}}" {{$role->id == $r ? 'selected': ''}}>{{$role->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            @error('role_id')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+
+
 
             <div class="form-group">
                 <label for="status">Status</label>
@@ -54,6 +81,7 @@
             @error('status')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
+
 
             <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
             <a href="{{route('admin.images.index')}}" class="btn btn-info waves-effect waves-light">Back</a>

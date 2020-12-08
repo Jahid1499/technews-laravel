@@ -7,6 +7,7 @@ use App\Models\Role;
 use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class UserController extends Controller
@@ -29,7 +30,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        $roles= Role::where('status', '1')->orderBy('name')->get();
+        //return $roles;
+        return view('admin.user.create', compact('roles'));
     }
 
     /**
@@ -41,20 +44,26 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:categories|max:255',
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users',
+            'role_id' => 'required',
             'status' => 'required',
         ]);
 
         $data = new User();
         $data->name = $request->name;
-        $data->slug = Str::slug($request->name);
+        $data->email = $request->email;
+        $data->role_id = $request->role_id;
         $data->status = $request->status;
+        $data->password = Hash::make('123456');
+
+        //return $data->password;
 
         $data->save();
 
-        Toastr::success('Tag successfully create', 'Success');
+        Toastr::success('User successfully create', 'Success');
 
-        return redirect()->route('admin.categories.index');
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -77,6 +86,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $data = $user;
+        //return $data;
         $roles = Role::where('status','1')->orderBy('name')->get();
         return view('admin.user.edit', compact('data','roles'));
     }
@@ -90,7 +100,13 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+        ]);
 
+        //return $request;
+
+        $user->name = $request->name;
         $user->role_id = $request->role_id;
         $user->status  =  $request->status;
 
@@ -113,6 +129,11 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
+
+        if (file_exists(public_path($user->image)))
+        {
+            unlink(public_path($user->image));
+        }
 
         Toastr::success('User successfully Deleted', 'Success');
 

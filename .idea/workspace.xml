@@ -11,10 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46405381-4c58-4773-a181-bb710443ec94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/git.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/user/default.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/register.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/update.blade.php" beforeDir="false" />
@@ -106,9 +103,10 @@
       <change beforePath="$PROJECT_DIR$/../sms/view_student_registration_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../sms/view_sylebus_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,16 +244,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\xampp\htdocs\technews\app\Http\Controllers\Admin" />
-      <recent name="E:\xampp\htdocs\technews\app\Http\Controllers" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\xampp\htdocs\technews\resources\views\admin" />
       <recent name="E:\xampp\htdocs\technews\resources\views\admin\post" />
       <recent name="E:\xampp\htdocs\technews\public\assets\admin\plugins" />
       <recent name="E:\xampp\htdocs\technews\database\migrations" />
       <recent name="E:\xampp\htdocs\technews\app\Http\Controllers\Admin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\xampp\htdocs\technews\public\assets\user" />
+      <recent name="E:\xampp\htdocs\technews\app\Http\Controllers\Admin" />
+      <recent name="E:\xampp\htdocs\technews\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -280,7 +279,8 @@
       <workItem from="1606917027006" duration="5391000" />
       <workItem from="1606976417315" duration="9394000" />
       <workItem from="1607003473928" duration="1391000" />
-      <workItem from="1607081829322" duration="28178000" />
+      <workItem from="1607081829322" duration="28735000" />
+      <workItem from="1607415652131" duration="5127000" />
     </task>
     <servers />
   </component>

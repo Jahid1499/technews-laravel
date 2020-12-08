@@ -18,8 +18,28 @@
             @csrf
             @method('put')
 
+
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="{{$data->name}}" class="form-control @error('name') is-invalid @enderror" placeholder="Enter user name">
+            </div>
+            @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" name="email" value="{{ $data->email }}" class="form-control @error('email') is-invalid @enderror" placeholder="Enter user email">
+            </div>
+            @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+
+
             <div class="form-group" style="width: 30%;">
-                <img src="{{asset($data->img)}}" alt="" class="img-responsive" style="width: 50%; height: 4%;">
+                <img src="{{asset($data->image)}}" alt="" class="img-responsive" style="width: 50%; height: ২০%;">
             </div>
 
             @php
