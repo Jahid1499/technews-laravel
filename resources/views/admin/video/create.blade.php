@@ -1,34 +1,42 @@
 @extends('admin.master')
-@section('title', "tags Edit | Tech news")
+@section('title', "Video Create | Tech news")
 @section('pageTitle')
-    <h4 class="pull-left page-title text-uppercase">Image Gallery Create</h4>
+    <h4 class="pull-left page-title text-uppercase">Video Gallery Create</h4>
     <ol class="breadcrumb pull-right">
         <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-        <li><a href="{{route('admin.images.index')}}">Image Gallery</a></li>
-        <li class="active">Image Gallery Create</li>
+        <li><a href="{{route('admin.videos.index')}}">Video Gallery</a></li>
+        <li class="active">Video Gallery Create</li>
     </ol>
 @endsection
 
 @section('mainContent')
     <div class="panel-heading">
-        <h3 class="panel-title text-uppercase">Image Gallery Create</h3>
+        <h3 class="panel-title text-uppercase">Video Gallery Create</h3>
     </div>
     <div class="panel-body">
         <form role="form" action="{{route('admin.videos.store')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="small_image">Image</label>
-                <input type="file" name="image" value="{{ old('image') }}" class="form-control @error('image') is-invalid @enderror">
-            </div>
-            @error('image')
-            <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
-
-            <div class="form-group">
                 <label for="link">Video Link</label>
                 <input type="text" name="link" value="{{ old('link') }}" class="form-control @error('link') is-invalid @enderror" placeholder="Enter Video Link">
             </div>
             @error('link')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="form-group">
+                <label for="video_title">Video title</label>
+                <input type="text" name="video_title" value="{{ old('video_title') }}" class="form-control @error('video_title') is-invalid @enderror" placeholder="Enter Video Title">
+            </div>
+            @error('video_title')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="form-group">
+                <label for="link_id">Video link Id</label>
+                <input type="text" name="link_id" value="{{ old('link_id') }}" class="form-control @error('link_id') is-invalid @enderror" placeholder="Enter link Id">
+            </div>
+            @error('link_id')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
@@ -52,6 +60,14 @@
                 </div>
             </div>
             @error('status')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="form-group">
+                <label for="small_image">Image</label>
+                <input type="file" name="image" value="{{ old('image') }}" class="form-control @error('image') is-invalid @enderror">
+            </div>
+            @error('image')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 

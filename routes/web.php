@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\User\UserController;
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Social;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
@@ -44,6 +45,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
     Route::resource('contacts', 'ContactController');
     Route::resource('comments', 'CommentController');
     Route::resource('users', 'UserController');
+    Route::resource('settings', 'SettingController');
 
 
 });
@@ -53,9 +55,18 @@ Route::group(['as'=>'user.','prefix'=>'user', 'namespace'=>'User'],function (){
     Route::get('home',[UserController::class, 'index'])->name('dashboard');
 });
 
+Route::get('post/{id}', [HomeController::class, 'post'])->name('post');
+Route::get('post', [HomeController::class, 'posts'])->name('allpost');
+Route::get('post/category/{id}', [HomeController::class, 'catposts'])->name('categorypost');
+Route::get('post/tag/{id}', [HomeController::class, 'tagposts'])->name('tagpost');
+Route::get('post/user/{id}', [HomeController::class, 'userposts'])->name('userpost');
+Route::get('about', [HomeController::class, 'about'])->name('about');
+
+
+
 
 View::composer('user.partial._footertop',function ($view){
-    return $view->with(['tags'=>Tag::where('status','1')->orderBy('name')->get(), 'about'=>About::first()]);
+    return $view->with(['tags'=>Tag::where('status','1')->orderBy('name')->get(), 'about'=>About::first(),'social'=>Social::first()]);
 });
 
 View::composer('user.partial._navigation',function ($view){

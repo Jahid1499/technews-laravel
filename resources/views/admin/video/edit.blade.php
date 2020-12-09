@@ -39,6 +39,22 @@
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
+            <div class="form-group">
+                <label for="video_title">Video Title</label>
+                <input type="text" name="video_title" value="{{$data->video_title}}" class="form-control @error('video_title') is-invalid @enderror">
+            </div>
+            @error('video_title')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
+            <div class="form-group">
+                <label for="link_id">Link Id</label>
+                <input type="text" name="link_id" value="{{$data->link_id}}" class="form-control @error('link_id') is-invalid @enderror">
+            </div>
+            @error('link_id')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+
 
             <div class="form-group">
                 <label for="status">Status</label>

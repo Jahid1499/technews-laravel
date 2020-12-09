@@ -11,7 +11,7 @@
                         <a class="nav-link" href="{{route('home')}}"><i class="fas fa-home"></i></a>
                     </li>
                     @foreach($categories as $category)
-                        <li class="nav-item"><a class="nav-link" href="#">{{$category->name}}</a></li>
+                        <li class="nav-item {{Request::is("post/category/{$category->id}") ? 'active': ''}}"><a class="nav-link" href="{{route('categorypost', $category->id)}}">{{$category->name}}</a></li>
                     @endforeach
                     <li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
                     <form class="form-inline" action="#" method="post">

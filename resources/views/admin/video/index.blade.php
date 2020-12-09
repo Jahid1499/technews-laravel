@@ -19,6 +19,8 @@
                 <th>#SL</th>
                 <th>Image</th>
                 <th>Link</th>
+                <th>Video Title</th>
+                <th>Link Id</th>
                 <th>Status</th>
                 <th>Action</th>
             </tr>
@@ -30,6 +32,8 @@
 
                 <td style="width: 30%"><img src="{{asset($data->image)}}" alt="" class="img-responsive" style="width: 50%; height: 4%;"></td>
                 <td>{{$data->link}}</td>
+                <td>{{$data->video_title}}</td>
+                <td>{{$data->link_id}}</td>
                 <td>{{$data->status ? 'Active':'Inactive'}}</td>
                 <td>
                     <a href="{{route('admin.videos.edit', $data->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>

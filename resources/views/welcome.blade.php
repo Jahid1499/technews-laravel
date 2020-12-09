@@ -9,8 +9,9 @@
             <h3 class="float-left">Latest News</h3>
             <div id="ticker-slide" class="ticker float-left">
                 <ul>
-                    @foreach($posts as $post)
-                    <li><a href="#">{{$post->title}}</a></li>
+                    @foreach($posts as $key=>$post)
+                    <li><a href="{{route('post', $post->id)}}">{{$post->title}}</a></li>
+                        @break($key==5)
                     @endforeach
                 </ul>
             </div>
@@ -63,116 +64,45 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="latest" role="tabpanel" aria-labelledby="nav-home-tab">
                             <ul class="list-news list-news-right">
+                                @foreach($posts as $key=>$post)
                                 <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/8.jpg">
+                                    <div class="post-thumb img-responsive">
+                                        <a href="{{route('post',$post->id)}}">
+                                            <img class="img-fluid" alt="{{$post->title}}" src="{{asset($post->image)}}">
                                         </a>
                                     </div>
-                                    <h3><a href="#">Watch out: That USB stick in your mailbox might be infected</a></h3>
+                                    <h3><a href="{{route('post',$post->id)}}">{{$post->title}}</a></h3>
                                 </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/9.jpg">
-                                        </a>
-                                    </div>
-                                    <h3>
-                                        <a href="#">Netflix Speeds Jumped 51% This Year</a>
-                                    </h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/11.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Uber wants to build planes to beat city traffic</a></h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/8.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Apple reportedly prototyping their Amazon Echo competitor</a></h3>
-                                </li>
+                                    @break($key == 3)
+                                @endforeach
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <ul class="list-news list-news-right">
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/9.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Watch out: That USB stick in your mailbox might be infected</a></h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/11.jpg">
-                                        </a>
-                                    </div>
-                                    <h3>
-                                        <a href="#">Netflix Speeds Jumped 51% This Year</a>
-                                    </h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/8.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Uber wants to build planes to beat city traffic</a></h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/8.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Apple reportedly prototyping their Amazon Echo competitor</a></h3>
-                                </li>
+                                @foreach($populars as $post)
+                                    <li>
+                                        <div class="post-thumb img-responsive">
+                                            <a href="{{route('post',$post->id)}}">
+                                                <img class="img-fluid" alt="{{$post->title}}" src="{{asset($post->image)}}">
+                                            </a>
+                                        </div>
+                                        <h3><a href="{{route('post',$post->id)}}">{{$post->title}}</a></h3>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="random" role="tabpanel" aria-labelledby="nav-contact-tab">
                             <ul class="list-news list-news-right">
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/8.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Watch out: That USB stick in your mailbox might be infected</a></h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/9.jpg">
-                                        </a>
-                                    </div>
-                                    <h3>
-                                        <a href="#">Netflix Speeds Jumped 51% This Year</a>
-                                    </h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/11.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Uber wants to build planes to beat city traffic</a></h3>
-                                </li>
-                                <li>
-                                    <div class="post-thumb">
-                                        <a href="#">
-                                            <img alt="" src="{{asset('assets/user')}}/img/tabs/8.jpg">
-                                        </a>
-                                    </div>
-                                    <h3><a href="#">Apple reportedly prototyping their Amazon Echo competitor</a></h3>
-                                </li>
+                                @foreach($randoms as $post)
+                                    <li>
+                                        <div class="post-thumb img-responsive">
+                                            <a href="{{route('post',$post->id)}}">
+                                                <img class="img-fluid" alt="{{$post->title}}" src="{{asset($post->image)}}">
+                                            </a>
+                                        </div>
+                                        <h3><a href="{{route('post',$post->id)}}">{{$post->title}}</a></h3>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -195,14 +125,14 @@
                     <div class="row single-featured-post mb-2">
                         <div class="col-sm-6">
                             <div class="img-fluid">
-                                <a href="#">
+                                <a href="{{route('post', $post->id)}}">
                                     <img class="img-thumbnail" src="{{asset($post->image)}}" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <h3 class="post-title">
-                                <a href="#">{{$post->title}}</a>
+                                <a href="{{route('post', $post->id)}}">{{$post->title}}</a>
                             </h3>
                             <div class="post-meta">
                                 <span class="post-date">
@@ -211,18 +141,18 @@
                                 </span>
                                 <span class="post-author">
                                     <i class="fas fa-user"></i>
-                                    <a href="#">
+                                    <a href="{{route('userpost', $post->user_id)}}">
                                         {{$post->user->name}}
                                     </a>
                                 </span>
                                 <span class="post-date">
                                     <i class="fas fa-eye"></i>
-                                    5
+                                    {{$post->total_view}}
                                 </span>
                             </div>
                             <div class="post-des">
                                 <p>{{Str::limit(strip_tags($post->description), 200)}}</p>
-                                <a href="#">Read more....</a></p>
+                                <a href="{{route('post', $post->id)}}">Read more....</a></p>
                             </div>
                         </div>
                     </div>
@@ -239,7 +169,7 @@
                         </div>
                         <div class="box-data" style="padding: 0px 10px;">
                             @foreach($posts as $post)
-                            <h4 class="hadding_02 new_border"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <a href="#">{{$post->title}}</a></h4>
+                            <h4 class="hadding_02 new_border"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> <a href="{{route('post', $post->id)}}">{{$post->title}}</a></h4>
                             @endforeach
                         </div>
                     </div>
@@ -265,7 +195,7 @@
                                 <div class="card-body">
                                     <button class="tag-name">{{$post->tag->name}}</button>
                                     <h3 class="post-title">
-                                        <a href="#">{{$post->title}}</a>
+                                        <a href="{{route('post', $post->id)}}">{{$post->title}}</a>
                                     </h3>
                                     <div class="post-meta">
                                     <span class="post-date">
@@ -274,7 +204,7 @@
                                     </span>
                                         <span class="post-author">
                                         <i class="fas fa-user"></i>
-                                        <a href="#">
+                                        <a href="{{route('userpost', $post->user_id)}}">
                                             {{$post->user->name}}
                                         </a>
                                     </span>
@@ -284,7 +214,7 @@
                                     </span>
                                     </div>
                                     <p class="card-text">{{Str::limit(strip_tags($post->description), 200)}}</p>
-                                    <button class="button-two"><a href="#">Read More</a></button>
+                                    <button class="button-two"><a href="{{route('post', $post->id)}}">Read More</a></button>
                                 </div>
                             </div>
                         </div>
@@ -292,7 +222,7 @@
                     </div>
                     <div class="row">
                         <div class="show-all-post w-100">
-                            <a href="#">Show all post</a>
+                            <a href="{{route('allpost')}}">Show all post</a>
                         </div>
                     </div>
                 </div>
@@ -329,7 +259,7 @@
                             <div class="row text-center m-0">
                                 @foreach($videos as $video)
                                 <div class="box-data-item py-3">
-                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#{{$video->id}}">
+                                    <a href="javascript:void(0)" data-toggle="modal" data-target="#{{$video->link_id}}">
                                         <img src="{{asset($video->image)}}" alt="">
                                     </a>
                                 </div>
@@ -352,7 +282,7 @@
                                     <div class="sn-col">
                                         <div class="sn-item">
                                             <div class="sn-icon">
-                                                <i class="fab fa-facebook-f"></i>
+                                                <i style="padding-top: 13px;" class="fab fa-facebook-f"></i>
                                             </div>
                                             <p>{{$follower->facebook}}K</p>
                                             <span>FANS</span>
@@ -361,7 +291,7 @@
                                     <div class="sn-col">
                                         <div class="sn-item twitter">
                                             <div class="sn-icon">
-                                                <i class="fab fa-twitter"></i>
+                                                <i style="padding-top: 13px;" class="fab fa-twitter"></i>
                                             </div>
                                             <p>{{$follower->twitter}}K</p>
                                             <span>FOLLOWERS</span>
@@ -370,7 +300,7 @@
                                     <div class="sn-col">
                                         <div class="sn-item pinterest">
                                             <div class="sn-icon">
-                                                <i class="fab fa-pinterest-p"></i>
+                                                <i style="padding-top: 13px;" class="fab fa-pinterest-p"></i>
                                             </div>
                                             <p>{{$follower->pinterest}}K</p>
                                             <span>PIN IT</span>
@@ -379,7 +309,7 @@
                                     <div class="sn-col">
                                         <div class="sn-item youtube">
                                             <div class="sn-icon">
-                                                <i class="fab fa-youtube"></i>
+                                                <i style="padding-top: 13px;" class="fab fa-youtube"></i>
                                             </div>
                                             <p>{{$follower->youtube}}K</p>
                                             <span>SUBSCRIBE</span>
@@ -400,7 +330,7 @@
                         <div class="box-data facebook_page">
                             <div class="row text-center m-0">
                                 <!--height =490 width=500-->
-                                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="370" height="490" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                                <iframe src="{{$setting->facebook_page}}" width="370" height="490" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
                             </div>
                         </div>
                     </div>
@@ -426,14 +356,14 @@
             </div>
             <!--end marque section-->
             <div class="row">
-                @foreach($posts as $key=>$post)
+                @foreach($populars as $key=>$post)
                 <div class="col-md-3 pb-3">
                     <div class="card">
                         <img src="{{asset($post->image)}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <button class="tag-name">{{$post->tag->name}}</button>
                             <h3 class="post-title">
-                                <a href="#">{{$post->title}}</a>
+                                <a href="{{route('post', $post->id)}}">{{$post->title}}</a>
                             </h3>
                             <div class="post-meta">
                                     <span class="post-date">
@@ -442,8 +372,8 @@
                                     </span>
                                 <span class="post-author">
                                         <i class="fas fa-user"></i>
-                                        <a href="#">
-                                           {{$post->user_id}}
+                                        <a href="{{route('userpost', $post->user_id)}}">
+                                           {{$post->user->name}}
                                         </a>
                                     </span>
                                 <span class="post-date">
@@ -451,7 +381,7 @@
                                         {{$post->total_view}}
                                     </span>
                             </div>
-                            <button class="button-two"><a href="#">Read More</a></button>
+                            <button class="button-two"><a href="{{route('post', $post->id)}}">Read More</a></button>
                         </div>
                     </div>
                 </div>
@@ -475,12 +405,12 @@
                         <div class="notice_board">
                             <ul>
                                 @foreach($posts as $key=>$post)
-                                <li><a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>{{$post->title}}</a></li>
+                                <li><a href="{{route('post', $post->id)}}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i>{{$post->title}}</a></li>
                                 @endforeach
                             </ul>
                         </div>
                         <div>
-                            <button class="button-two"><a href="#">Show All</a></button>
+                            <button class="button-two"><a href="{{route('allpost')}}">Show All</a></button>
                         </div>
                     </div>
                 </div>
@@ -492,12 +422,8 @@
                         </div>
                         <div class="about_us">
                             <div class="sn-row">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur assumenda,
-                                    corporis cupiditate debitis dolore eaque eius, fugit ipsa ipsam iusto nihil pariatur
-                                    quis recusandae, sequi sit vel voluptate voluptates Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Atque consectetur fugiat illo ipsa iusto libero molestias necessitatibus
-                                    nesciunt odio odit officiis quam quidem quisquam, quod ratione reiciendis sequi, tempore voluptatum! .....</p>
-                                <a href="#">Read more</a>
+                                <p>{{Str::limit(strip_tags($about->about_us), 200)}}</p>
+                                <a href="{{route('about')}}">Read more</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -516,7 +442,7 @@
         <div class="container-md">
             <div class="row">
                 <div class="col-sm-7">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14602.700312013923!2d90.34508223190667!3d23.794582085659727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c0e96fce29dd%3A0x6ccd9e51aba9e64d!2sMirpur-1%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1604946779892!5m2!1sen!2sbd"
+                    <iframe src="{{$setting->google_map}}"
                             width="100%" height="445" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
                 <div class="col-sm-5">
@@ -550,3 +476,5 @@
     </div>
     <!--end google map and contact section-->
 @endsection
+
+@include('user.partial._model')

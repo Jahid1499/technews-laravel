@@ -6,15 +6,15 @@
                     <h4>TechNews</h4>
                     <span></span>
                     <p>{{Str::limit(strip_tags($about->about_us), 150)}}</p>
-                    <a href="#">Read More</a>
+                    <a href="{{route('about')}}">Read More</a>
                 </div>
                 <div class="footer-social">
                     <ul>
-                        <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="{{$social->facebook}}"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="{{$social->twitter}}"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="{{$social->pinterest}}"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="{{$social->linkedin}}"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                        <li><a target="_blank" href="{{$social->youtube}}"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -26,22 +26,6 @@
                         @foreach($tags as $tag)
                         <a href="#">{{$tag->name}}</a>
                         @endforeach
-                        {{--<a href="#">Sports</a>
-                        <a href="#">Business</a>
-                        <a href="#">Politics</a>
-                        <a href="#">Tennis</a>
-                        <a href="#">Soccer</a>
-                        <a href="#">Usa</a>
-                        <a href="#">Cricket</a>
-                        <a href="#">Health</a>
-                        <a href="#">Nature</a>
-                        <a href="#">Videos</a>
-                        <a href="#">Asia</a>
-                        <a href="#">Bootstrap</a>
-                        <a href="#">Nba</a>
-                        <a href="#">Africa</a>
-                        <a href="#">Newser</a>
-                        <a href="#">Flicks</a>--}}
                     </div>
                 </div>
             </div>

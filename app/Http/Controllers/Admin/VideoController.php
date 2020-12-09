@@ -42,6 +42,8 @@ class VideoController extends Controller
         $request->validate([
             'image' => 'required|mimes:jpeg,png,jpg,JPG',
             'link'=>'required',
+            'video_title'=>'required',
+            'link_id'=>'required|unique:videos',
             'status'=>'required'
         ]);
 
@@ -56,6 +58,8 @@ class VideoController extends Controller
         $data = new Video();
         $data->image = $path.$imagename;
         $data->link = $request->link;
+        $data->video_title = $request->video_title;
+        $data->link_id = $request->link_id;
         $data->status = $request->status;
 
         $data->save();
@@ -100,6 +104,8 @@ class VideoController extends Controller
         $request->validate([
             'image' => 'mimes:jpeg,png,jpg,JPG',
             'link'=>'required',
+            'video_title'=>'required',
+            'link_id'=>'required',
             'status'=>'required'
         ]);
 
@@ -123,9 +129,11 @@ class VideoController extends Controller
 
         $video->image = $img;
         $video->link = $request->link;
+        $video->video_title = $request->video_title;
+        $video->link_id = $request->link_id;
         $video->status = $request->status;
 
-        $video->save();
+        $video->update();
 
         Toastr::success('Video successfully update', 'Success');
 
@@ -146,8 +154,6 @@ class VideoController extends Controller
         {
             unlink(public_path($video->image));
         }
-
-
 
         Toastr::success('Video successfully Deleted', 'Success');
 
