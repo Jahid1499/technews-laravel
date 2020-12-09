@@ -13,6 +13,7 @@ use App\Models\Slider;
 use App\Models\Social;
 use App\Models\Tag;
 use App\Models\Video;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -110,6 +111,26 @@ class HomeController extends Controller
             ->get();
         session()->flash('search','Your search result ...total ');
         return view('user.search', compact('posts', 'randomposts'));
+    }
+
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'message'=>'required'
+        ]);
+
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->message = $request->message;
+
+        $contact->save();
+        session()->flash('contact','As soon as possible admin contact with you, Thank you!!!');
+
+        return redirect()->route('home');
+
     }
 
 }

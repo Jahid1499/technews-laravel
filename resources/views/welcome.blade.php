@@ -1,8 +1,21 @@
+@php
+    use Brian2694\Toastr\Facades\Toastr;
+@endphp
 @extends('user.master')
 
 @section('title', 'Welcome | Tech World')
 
 @section('mainContent')
+
+
+    @if(session()->has('contact'))
+        <div class="container-md mt-3">
+            <div class="alert alert-success" role="alert">
+                {{session('contact')}}
+            </div>
+        </div>
+    @endif
+
     <!--start marque section-->
     <div class="marque">
         <div class="container-md">
@@ -451,21 +464,35 @@
                             <h2><a href="#">Contact With us</a></h2>
                         </div>
                         <div class="contact_with_us">
-                            <form action="#" method="#">
+
+                            <form action="{{route('contact')}}" method="post">
+                                @csrf
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" placeholder="Ex. Jahid Hassan" class="form-control" id="name">
+                                    <input type="text" name="name" placeholder="Ex. Jahid Hassan" class="form-control @error('name') is-invalid @enderror" id="name">
                                 </div>
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+
                                 <div class="form-group">
                                     <label for="email">Name</label>
-                                    <input type="email" name="email" placeholder="Ex. name@gmail.com" class="form-control" id="email">
+                                    <input type="email" name="email" placeholder="Ex. name@gmail.com" class="form-control @error('email') is-invalid @enderror" id="email">
                                 </div>
+                                @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+
                                 <div class="form-group">
                                     <label for="message">Write Your Message</label>
-                                    <textarea class="form-control" id="message" rows="4"></textarea>
+                                    <textarea name="message" class="form-control @error('message') is-invalid @enderror" id="message" rows="4"></textarea>
                                 </div>
+                                @error('message')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+
                                 <div class="form-group pt-2">
-                                    <input type="button" class="btn btn-block sub_button" value="Submit">
+                                    <input type="submit" class="btn btn-block sub_button" value="Submit">
                                 </div>
                             </form>
                         </div>
@@ -499,5 +526,20 @@
     @endforeach
     <!--end model section-->
 @endsection
+
+@push('js')
+
+    <script src="{{asset('assets/admin/js/toastr.min.js')}}"></script>
+    {!! Toastr::message() !!}
+
+    <script type="text/javascript">
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+            toastr.error('{{$error}}','Error', {closeButton:true, progressBar:true})
+            @endforeach
+        @endif
+    </script>
+
+@endpush
 
 

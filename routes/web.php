@@ -62,6 +62,7 @@ Route::get('post/tag/{id}', [HomeController::class, 'tagposts'])->name('tagpost'
 Route::get('post/user/{id}', [HomeController::class, 'userposts'])->name('userpost');
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::post('search', [HomeController::class, 'search'])->name('search');
+Route::post('contact/with_us', [HomeController::class, 'contact'])->name('contact');
 
 
 
