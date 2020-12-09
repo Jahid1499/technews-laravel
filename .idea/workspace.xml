@@ -11,14 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46405381-4c58-4773-a181-bb710443ec94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/setting/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/setting/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/about.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/catposts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/post.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/posts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/tagposts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/userposts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/register.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/update.blade.php" beforeDir="false" />
@@ -110,17 +102,12 @@
       <change beforePath="$PROJECT_DIR$/../sms/view_student_registration_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../sms/view_sylebus_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/VideoController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/video/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/video/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/video/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/video/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/video/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/video/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/partial/_footertop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partial/_footertop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partial/_model.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partial/_model.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/partial/_navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/partial/_navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/partial/_model.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/tagposts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/tagposts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +284,7 @@
       <workItem from="1607081829322" duration="28735000" />
       <workItem from="1607415652131" duration="5216000" />
       <workItem from="1607430704658" duration="25177000" />
-      <workItem from="1607488521040" duration="25860000" />
+      <workItem from="1607488521040" duration="26908000" />
     </task>
     <servers />
   </component>
@@ -321,6 +308,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="705" y="285" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607535577187" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607542999027">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607542999027" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1607538169769">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

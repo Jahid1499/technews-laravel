@@ -24,7 +24,7 @@
                     <span></span>
                     <div class="tag-list">
                         @foreach($tags as $tag)
-                        <a href="#">{{$tag->name}}</a>
+                        <a href="{{route('tagpost', $tag->id)}}">{{$tag->name}}</a>
                         @endforeach
                     </div>
                 </div>

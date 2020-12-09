@@ -71,10 +71,11 @@ class HomeController extends Controller
 
     public function tagposts($id)
     {
-        $post = Post::where('category_id',$id)
+        $posts = Post::where('tag_id',$id)
             ->where('status','1')
             ->orderBy('id','desc')->get();
-        return view('user.tagposts', compact('post'));
+        //dd($posts);
+        return view('user.tagposts', compact('posts'));
     }
 
     public function userposts($id)

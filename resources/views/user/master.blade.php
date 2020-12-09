@@ -42,10 +42,6 @@
 
 <div class="clearfix"></div>
 
-<!--start model section-->
-@include('user.partial._model')
-<!--end model section-->
-
 </body>
 
 {{--footer section start--}}
