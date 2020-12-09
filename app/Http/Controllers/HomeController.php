@@ -29,7 +29,7 @@ class HomeController extends Controller
         $contact = Contact::first();
         $posts = Post::where('status','1')->orderBy('id','desc')->get();
         $sliders = Slider::where('status','1')->orderBy('id')->get();
-        $populars = Post::where('status','1')->orderBy('total_view','asc')->limit(4)->get();
+        $populars = Post::where('status','1')->orderBy('total_view','desc')->limit(4)->get();
         $randoms = Post::where('status', '1')->inRandomOrder()->limit(4)->get();
 
         //dd($setting);
@@ -93,6 +93,23 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
         return view('user.about', compact('about','posts'));
+    }
+
+    public function search(Request $request)
+    {
+        $data = $request->search;
+        $posts = Post::where('title', 'like', '%'.$data.'%')
+            ->orWhere('description', 'like', '%'.$data.'%')
+            ->where('status','1')
+            ->orderBy('id','desc')->get();
+        //dd($posts);
+
+        $randomposts = Post::where('status', '1')
+            ->inRandomOrder()
+            ->limit(3)
+            ->get();
+        session()->flash('search','Your search result ...total ');
+        return view('user.search', compact('posts', 'randomposts'));
     }
 
 }

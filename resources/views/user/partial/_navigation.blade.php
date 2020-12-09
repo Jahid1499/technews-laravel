@@ -14,7 +14,8 @@
                         <li class="nav-item {{Request::is("post/category/{$category->id}") ? 'active': ''}}"><a class="nav-link" href="{{route('categorypost', $category->id)}}">{{$category->name}}</a></li>
                     @endforeach
                     <li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
-                    <form class="form-inline" action="#" method="post">
+                    <form class="form-inline" action="{{route('search')}}" method="post">
+                        @csrf
                         <input class="form-control" type="search" name="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success d-none" type="submit">i</button>
                     </form>
