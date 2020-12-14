@@ -32,7 +32,6 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 //Admin route
 Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (){
     Route::get('home',[AdminController::class, 'index'])->name('dashboard');
-<<<<<<< HEAD
     Route::resource('tags', 'TagController');
     Route::resource('roles', 'RoleController');
     Route::resource('categories', 'CategoryController');
@@ -47,13 +46,6 @@ Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (
     Route::resource('comments', 'CommentController');
     Route::resource('users', 'UserController');
     Route::resource('settings', 'SettingController');
-=======
-    Route::resource('tags', '\App\Http\Controllers\Admin\TagController');
-    Route::resource('roles', '\App\Http\Controllers\Admin\RoleController');
-    Route::resource('categories', '\App\Http\Controllers\Admin\CategoryController');
->>>>>>> development
-
-
 });
 
 //User route
