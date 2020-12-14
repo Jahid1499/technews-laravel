@@ -134,6 +134,13 @@
                         <li><a href="{{route('admin.settings.index')}}">Setting List</a></li>
                     </ul>
                 </li>
+                <li class="has_sub {{Request::is('admin.categories.*') ? 'active': ''}}">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-menu-alt"></i><span> Categories </span><span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('admin.categories.index')}}">Categories List</a></li>
+                        <li><a href="{{route('admin.categories.create')}}">Add Category</a></li>
+                    </ul>
+                </li>
 
 
                 <!--<li class="has_sub">-->

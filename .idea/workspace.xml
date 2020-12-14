@@ -11,7 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46405381-4c58-4773-a181-bb710443ec94" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../mizanur/mizanur/delete_product.php" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
+>>>>>>> development
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/home.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/register.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Newproject/resources/views/post/update.blade.php" beforeDir="false" />
@@ -103,6 +109,11 @@
       <change beforePath="$PROJECT_DIR$/../sms/view_student_registration_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../sms/view_sylebus_form.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/partial/_leftsidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+>>>>>>> development
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,6 +281,7 @@
       <updated>1606753216859</updated>
       <workItem from="1606753217927" duration="4124000" />
       <workItem from="1606757392063" duration="1927000" />
+<<<<<<< HEAD
       <workItem from="1606792951624" duration="21423000" />
       <workItem from="1606825729351" duration="21337000" />
       <workItem from="1606882589268" duration="10805000" />
@@ -282,6 +294,9 @@
       <workItem from="1607488521040" duration="31171000" />
       <workItem from="1607843187977" duration="1249000" />
       <workItem from="1607963554316" duration="1000000" />
+=======
+      <workItem from="1606792951624" duration="22916000" />
+>>>>>>> development
     </task>
     <servers />
   </component>
@@ -301,6 +316,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="705" y="285" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607535577187">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -314,6 +330,13 @@
     </state>
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607545446121" />
     <state x="794" y="443" key="NewPhpFileDialog" timestamp="1607493040537">
+=======
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606823955995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606823955995" />
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1606796615425">
+>>>>>>> development
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607493040537" />
