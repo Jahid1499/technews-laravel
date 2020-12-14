@@ -13,6 +13,8 @@ class Post extends Model
 
     protected $table = "posts";
 
+    //protected $fillable = ['','',''];
+
     public function tag()
     {
         return $this->belongsTo('App\Models\Tag');

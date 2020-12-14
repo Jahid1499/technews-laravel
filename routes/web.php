@@ -61,6 +61,7 @@ Route::get('post/user/{id}', [HomeController::class, 'userposts'])->name('userpo
 Route::get('about', [HomeController::class, 'about'])->name('about');
 Route::post('search', [HomeController::class, 'search'])->name('search');
 Route::post('contact/with_us', [HomeController::class, 'contact'])->name('contact');
+Route::post('user/comment', [HomeController::class, 'getComment'])->name('getcomment');
 
 
 

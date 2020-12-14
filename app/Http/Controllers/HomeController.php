@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Follower;
 use App\Models\Image;
@@ -46,12 +47,15 @@ class HomeController extends Controller
             ->inRandomOrder()
             ->limit(3)
             ->get();
-        //return $posts;
+        $comments = Comment::where('post_id', $id)
+                            ->where('status', '1')
+                            ->orderBy('id','desc')->get();
+        //dd($comments);
 
         $post->increment('total_view');
 
 
-        return view('user.post', compact('post','posts'));
+        return view('user.post', compact('post','posts', 'comments'));
     }
 
     public function posts()
@@ -131,6 +135,22 @@ class HomeController extends Controller
 
         return redirect()->route('home');
 
+    }
+
+    public function getComment(Request $request)
+    {
+        $comment = new Comment();
+        $comment->post_id = $request->post_id;
+        $comment->user_id = 4;
+        $comment->comment = $request->comment;
+        $comment->status = '1';
+
+        $comment->save();
+
+        session()->flash('comment','Thank you for your comment !!!');
+        return redirect()->back();
+
+        //dd($request->comment);
     }
 
 }
