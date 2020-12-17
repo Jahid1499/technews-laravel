@@ -65,6 +65,8 @@
                 </div>
                 <!--end slider section-->
 
+                <div class="clearfix"></div>
+
                 <!--start tabs section-->
                 <div class="col-md-4 p-0 tab-section">
                     <nav>
@@ -165,7 +167,7 @@
                             </div>
                             <div class="post-des">
                                 <p>{{Str::limit(strip_tags($post->description), 200)}}</p>
-                                <a href="{{route('post', $post->id)}}">Read more....</a></p>
+                                <a href="{{route('post', $post->id)}}">Read more....</a>
                             </div>
                         </div>
                     </div>

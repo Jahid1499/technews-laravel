@@ -1,5 +1,16 @@
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575.98px) {
+    .banner{
+        text-align: center;
+    }
+    .banner p {
+        text-align: center;
+        margin-top: -28px;
+    }
+    .banner a {
+        margin-top: -59px;
+        letter-spacing: 26px;
+    }
     .navbar-nav {
         padding-top: 17px;
     }
@@ -10,6 +21,9 @@
     .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
         padding: 10px 9px;
         font-size: 14px;
+    }
+    .tab-section{
+        margin-top: 13px;
     }
 }
 
@@ -63,6 +77,20 @@
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991.98px) {
+    .banner p {
+        font-size: 40px;
+        margin-top: 18px;
+        letter-spacing: 29px;
+    }
+    .banner h6 {
+        font-size: 17px;
+        margin-top: 20px;
+        letter-spacing: 1px;
+    }
+    .banner a {
+        margin-top: -58px;
+        letter-spacing: 21px;
+    }
     .navbar-nav {
         margin-top: 20px;
     }
@@ -161,6 +189,9 @@
         transition: 0.3s all ease-in;
         padding: 10px 7px;
         font-size: 12px;
+    }
+    .navbar-collapse {
+        margin-bottom: 0px;
     }
     .slider_section {
         margin-top: 3%;

@@ -23,23 +23,36 @@
 
 /*start banner section*/
 .banner{
-    min-height: 104px;
+    min-height: 100px;
     background: #0b2e13;
+    background-image: url("http://127.0.0.1:8000/assets/user/img/banner.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.banner img{
+
 }
 
 .banner p{
-    color: #fff;
+    color: #8a8a8a;
     font-size: 40px;
+    margin-top: 45px;
+    letter-spacing: 35px;
 }
 .banner h6{
-    color: #fff;
+    color: #bbbbbb;
     font-size: 17px;
+    margin-top: 34px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .banner a{
-    color: #fff;
+    color: #cacaca;
     float: left;
-    margin-top: -53px;
+    margin-top: -62px;
+    letter-spacing: 23px;
 }
 .banner a:hover{
     text-decoration: none;
