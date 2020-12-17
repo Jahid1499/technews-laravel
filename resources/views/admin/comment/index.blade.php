@@ -27,7 +27,7 @@
             @foreach($datas as $key=>$data)
             <tr>
                 <td>{{$key+1}}</td>
-                <td>{{$data->user_id}}</td>
+                <td>{{$data->user->name}}</td>
                 <td>{{$data->post_id}}</td>
                 <td>{{$data->comment}}</td>
                 <td>

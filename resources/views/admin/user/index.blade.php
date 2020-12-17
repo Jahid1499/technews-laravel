@@ -32,7 +32,7 @@
                 <td>{{$data->name}}</td>
                 <td>{{$data->email}}</td>
                 <td>{{$data->status ? 'Active':'Inactive'}}</td>
-                <td>{{$data->role_id}}</td>
+                <td>{{$data->role->name}}</td>
                 <td style="width: 30%"><img src="{{asset($data->image)}}" alt="" class="img-responsive" style="width: 50%; height: ২০%;"></td>
                 <td>
                     <a href="{{route('admin.users.edit', $data->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>

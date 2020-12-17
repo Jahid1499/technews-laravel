@@ -36,12 +36,12 @@
                 <td>{{$key+1}}</td>
                 <td>{{$data->title}}</td>
                 <td>{{Str::limit(strip_tags($data->description), 20)}}</td>
-                <td>{{$data->user_id}}</td>
+                <td>{{$data->user->name}}</td>
                 <td>{{$data->total_view}}</td>
                 <td>{{$data->total_comment}}</td>
                 <td style="width: 30%"><img src="{{asset($data->image)}}" alt="" class="img-responsive" style="width: 50%; height: 100px;"></td>
-                <td>{{$data->category_id}}</td>
-                <td>{{$data->tag_id}}</td>
+                <td>{{$data->category->name}}</td>
+                <td>{{$data->tag->name}}</td>
                 <td>{{$data->is_featured == 1 ? 'Yes' : 'No'}}</td>
                 <td>{{$data->status ? 'Active':'Inactive'}}</td>
                 <td>
