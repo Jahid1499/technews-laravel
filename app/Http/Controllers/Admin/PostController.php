@@ -8,6 +8,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function GuzzleHttp\Promise\all;
 
 class PostController extends Controller
@@ -73,7 +74,7 @@ class PostController extends Controller
         $data = new Post();
         $data->tag_id = $request->tag_id;
         $data->category_id = $request->category_id;
-        $data->user_id = 4;
+        $data->user_id = Auth::user()->id;
         $data->title = $request->title;
         $data->description = $request->description;
         $data->image = $path.$imagename;

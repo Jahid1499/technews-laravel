@@ -128,11 +128,15 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+
         $user->delete();
 
         if (file_exists(public_path($user->image)))
         {
-            unlink(public_path($user->image));
+            if(file_exists(public_path($user->image)) == false)
+            {
+                unlink(public_path($user->image));
+            }
         }
 
         Toastr::success('User successfully Deleted', 'Success');

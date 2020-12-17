@@ -27,7 +27,7 @@
 
             <div class="form-group">
                 <label for="email">Email</label>
-                <input disabled type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Enter user email">
+                <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="Enter user email">
             </div>
             @error('email')
             <div class="alert alert-danger">{{ $message }}</div>

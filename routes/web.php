@@ -27,10 +27,10 @@ use Illuminate\Support\Facades\View;
     return view('welcome');
 });*/
 
-Route::get('/', [HomeController::class, 'home'])->name('home');
+//Route::get('/', [HomeController::class, 'home'])->name('home');
 
 //Admin route
-Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin'],function (){
+Route::group(['as'=>'admin.','prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>'auth'],function (){
     Route::get('home',[AdminController::class, 'index'])->name('dashboard');
     Route::resource('tags', 'TagController');
     Route::resource('roles', 'RoleController');
@@ -74,3 +74,7 @@ View::composer('user.partial._navigation',function ($view){
     return $view->with('categories', Category::where('status','1')->orderBy('name')->get());
 });
 
+
+Auth::routes();
+
+Route::get('/', [HomeController::class, 'home'])->name('home');
